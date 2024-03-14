@@ -1,0 +1,45 @@
+.barberContainer {
+  /* border-width: 2px;
+  border-style: solid;
+  border-color: white; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ball {
+  border-radius: 100px;
+  background: radial-gradient(circle at 70%, white, #000);
+}
+
+.cap {
+  border-radius: 0.25em;
+  background:
+    radial-gradient(100% 10% at 60% 3%, #fff1, #0000 50%),
+    radial-gradient(100% 10% at 60% 97%, #fff3, #0000 50%),
+    radial-gradient(150% 10% at 50% 99%, #0009, #0000 50%),
+    linear-gradient(#fff1, #fff0 15%, #fff1 85%, #fff3),
+    linear-gradient(#fff2, #fff0 20%, #0000 96%, #0006),
+    linear-gradient(90deg, #555, #333 10%, #ccc 33%, #666 48% 52%, #fff 66% 75%, #555 90% 95%, #ccc)
+}
+
+.barberWrap {
+  opacity: 60%;
+  background: linear-gradient(90deg, #000000, #1b1b1b 10%, #ccc 33%, #666 48% 52%, #fff 66% 75%, #555 90% 95%, #ccc)
+}
+
+.barber {
+  position: inherit;
+  background: linear-gradient(-45deg, #E24C3B 25%, #0088E0 25%, #0088E0 50%, #E24C3B 50%, #E24C3B 75%, #0088E0 75%);
+  animation: barberpole 1.5s infinite linear;
+}
+
+@keyframes barberpole {
+  from {
+    background-position: 0%;
+  }
+
+  to {
+    background-position: 100%;
+  }
+}
