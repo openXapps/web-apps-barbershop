@@ -4,6 +4,7 @@ import { VitePWA } from 'vite-plugin-pwa'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  base: '/apps/barbershop/',
   plugins: [
     react(),
     VitePWA({
@@ -16,7 +17,7 @@ export default defineConfig({
         short_name: 'Barbershop',
         description: 'Mediterranean Barbershop',
         theme_color: '#ffffff',
-        start_url: '/',
+        start_url: '.',
         icons: [
           {
             "src": "pwa-64x64.png",
