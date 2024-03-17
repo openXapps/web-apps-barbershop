@@ -3,7 +3,7 @@
  */
 
 // App name
-export const appName = 'Mediterranean Barbershop';
+export const appName = 'Mediterranean Barber';
 
 // Local storage object names
 export const storageItems = {
