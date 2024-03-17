@@ -1,14 +1,10 @@
-import { Box, Container, Toolbar, Typography } from "@mui/material";
-import Footer from "./Footer";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
 
 export default function Home() {
   return (
-    <Container maxWidth="md" >
-      <Toolbar />
-      <Box minHeight={300} border={2} mt={3}>
-        <Typography>Here goes all the home page content</Typography>
-      </Box>
-      <Footer />
-    </Container>
+    <Box minHeight={300} border={1} mt={3} p={3} borderRadius={3}>
+      <Typography>Home Details</Typography>
+    </Box>
   );
 }
