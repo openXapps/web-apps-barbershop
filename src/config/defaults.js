@@ -2,9 +2,6 @@
  * DEFAULT DATA FOR INITIAL APP LOAD
  */
 
-// App name
-export const appName = 'Mediterranean Barber';
-
 // Local storage object names
 export const storageItems = {
   settings: 'barbershop-settings',

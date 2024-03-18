@@ -5,41 +5,45 @@ import './barbershoppole.css';
  * @param {any} props Static barbershop pole size (SMALL or MEDIUM)
  * @returns React component
  */
-export default function BarbershopPole(props) {
-  const isSmall = props.size === 'SMALL' ? true : false;
+export default function BarbershopPole({ isSmall = false }) {
 
   const barberContainer = {
-    width: '85px',
-    height: '300px',
-    margin: '2em',
-    padding: '0.5em',
+    width: `${isSmall ? 55 : 85}px`,
+    height: `${isSmall ? 270 : 300}px`,
+    // margin: '1em',
+    // padding: '0.5em',
   };
   const ball = {
-    width: '25px',
-    height: '25px',
+    width: `${isSmall ? 15 : 25}px`,
+    height: `${isSmall ? 15 : 25}px`,
   };
   const capSmall = {
-    width: '54px',
+    width: `${isSmall ? 35 : 55}px`,
     height: '15px',
-    marginTop: '2px',
-    marginBottom: '2px',
+    marginTop: '1px',
+    marginBottom: '1px',
   };
   const capLarge = {
-    width: '85px',
+    width: `${isSmall ? 55 : 85}px`,
     height: '15px',
-    marginTop: '2px',
-    marginBottom: '2px',
+    marginTop: '1px',
+    marginBottom: '1px',
   };
   const barberWrap = {
-    width: '54px',
-    height: '172px',
+    // width: '54px',
+    width: '100%',
+    // height: '172px',
+    height: '100%',
   };
   const barber = {
-    width: '54px',
-    height: '172px',
-    backgroundSize: '27px 27px',
-    marginTop: '2px',
-    marginBottom: '2px',
+    // width: '54px',
+    width: '75%',
+    // height: '172px',
+    height: '60%',
+    // backgroundSize: '27px 27px',
+    backgroundSize: isSmall ? '20px 20px' : '31px 31px',
+    marginTop: '1px',
+    marginBottom: '1px',
   };
 
   return (

@@ -1,7 +1,7 @@
 .barberContainer {
   /* border-width: 2px;
   border-style: solid;
-  border-color: white; */
+  border-color: green; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,7 @@
 .barber {
   position: inherit;
   background: linear-gradient(-45deg, #E24C3B 25%, #0088E0 25%, #0088E0 50%, #E24C3B 50%, #E24C3B 75%, #0088E0 75%);
-  animation: barberpole 1.5s infinite linear;
+  /* animation: barberpole 1.5s infinite linear; */
 }
 
 @keyframes barberpole {

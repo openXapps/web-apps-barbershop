@@ -32,7 +32,7 @@ export default function App() {
 
   const router = createBrowserRouter(createRoutesFromElements(
     <Route path="/" element={<Layout />}>
-      <Route index element={<Home />} />
+      <Route index element={<Home header='About Us' />} />
       <Route path="styles" element={<Styles header='Hair Styles' />} />
       <Route path="pricing" element={<Pricing header='Price List' />} />
       <Route path="contact" element={<Contact header='Contact Us' />} />

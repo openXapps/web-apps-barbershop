@@ -1,4 +1,4 @@
-import { useContext, useEffect } from 'react';
+import { useContext } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 // MUI Components
@@ -24,7 +24,6 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 // App Specific
 import { AppContext } from '../context/AppStore';
-import { appName } from '../config/defaults';
 
 function Header() {
   const rrNavigate = useNavigate();
@@ -32,13 +31,6 @@ function Header() {
   const smallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
   const [{ themeIsDark, routePath }, appDispatch] = useContext(AppContext);
   // const [anchorEl, setAnchorEl] = useState(null);
-
-  useEffect(() => {
-    if (pathname === '/' && routePath !== appName) {
-      appDispatch({ type: 'ROUTE', payload: appName });
-    }
-    return () => true;
-  }, [pathname, appDispatch, routePath])
 
   // const handleMenuToggle = (e) => {
   //   setAnchorEl(e.currentTarget);
