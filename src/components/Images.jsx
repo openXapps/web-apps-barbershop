@@ -13,13 +13,13 @@ import img04 from '../assets/shop-04-640x360.png';
 // import img07 from '../assets/shop-07-640x360.png';
 
 const itemData = [
-  { id: 1, img: img01, title: 'Shop Image 1', },
-  { id: 2, img: img02, title: 'Shop Image 2', },
-  { id: 3, img: img03, title: 'Shop Image 3', },
-  { id: 4, img: img04, title: 'Shop Image 4', },
-  // { id: 5, img: img03, title: 'Shop Image 3', },
-  // { id: 6, img: img03, title: 'Shop Image 3', },
-  // { id: 7, img: img03, title: 'Shop Image 3', },
+  { img: img04, title: 'Shop Image 4', cols: 3, rows: 1 },
+  { img: img03, title: 'Shop Image 3', cols: 3, rows: 1 },
+  { img: img01, title: 'Shop Image 1', cols: 1, rows: 1 },
+  { img: img02, title: 'Shop Image 2', cols: 1, rows: 1 },
+  // {  img: img03, title: 'Shop Image 3', },
+  // {  img: img03, title: 'Shop Image 3', },
+  // {  img: img03, title: 'Shop Image 3', },
 ];
 
 export default function Images() {
@@ -27,14 +27,15 @@ export default function Images() {
   const mediumScreen = useMediaQuery(theme => theme.breakpoints.down('md'));
 
   return (
-    // <Box sx={{ border: 1, display: 'flex', alignItems: 'center', width: smallScreen ? 320 : (mediumScreen ? 480 : 500) }}>
-    <Box sx={{ mt: 3,border: 0, display: 'flex', alignItems: 'center', width: '100%' }}>
-      <ImageList variant="masonry" cols={2} gap={8}>
-        {itemData.map((item) => (
-          <ImageListItem key={item.id}>
-            return (
+    <Box sx={{ mt: 3, border: 0, display: 'flex', alignItems: 'center', width: '100%' }}>
+      <ImageList
+        variant="quilted"
+        cols={3}
+        gap={10}
+      >
+        {itemData.map((item, id) => (
+          <ImageListItem key={id} cols={item.cols} rows={item.rows}>
             <img srcSet={item.img} src={item.img} alt={item.title} loading="lazy" />
-            )
           </ImageListItem>
         ))}
       </ImageList>

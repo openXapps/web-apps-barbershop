@@ -14,10 +14,10 @@ import Divider from '@mui/material/Divider';
 // MUI Icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Brightness6Icon from '@mui/icons-material/Brightness6';
-import ContentCutIcon from '@mui/icons-material/ContentCut';
-import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+// import ContentCutIcon from '@mui/icons-material/ContentCut';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
+// import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
 // import AddCircleIcon from '@mui/icons-material/AddCircle';
 // import MenuIcon from '@mui/icons-material/Menu';
 // import SettingsIcon from '@mui/icons-material/Settings';
@@ -45,6 +45,10 @@ function Header() {
   //   rrNavigate(`/${e.currentTarget.dataset.name}`);
   // };
 
+  const handleThemeClick = () => {
+    appDispatch({ type: 'THEME', payload: !themeIsDark }) 
+  }
+
   return (
     <AppBar color="inherit">
       <Container maxWidth="md">
@@ -54,10 +58,10 @@ function Header() {
           </Typography>
           {pathname === '/' ? (
             <Box display="flex" flexDirection="row">
-              <IconButton
+              {/* <IconButton
                 color="inherit"
                 onClick={() => { rrNavigate('/styles') }}
-              ><ContentCutIcon /></IconButton>
+              ><ContentCutIcon /></IconButton> */}
               <IconButton
                 color="inherit"
                 onClick={() => { rrNavigate('/pricing') }}
@@ -69,7 +73,7 @@ function Header() {
               <Divider sx={{opacity: 0.9}} orientation="vertical" variant="middle" flexItem />
               <IconButton
                 color="inherit"
-                onClick={() => { appDispatch({ type: 'THEME', payload: !themeIsDark }) }}
+                onClick={handleThemeClick}
               ><Brightness6Icon /></IconButton>
             </Box>
           ) : (

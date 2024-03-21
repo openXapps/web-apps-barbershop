@@ -1,10 +1,13 @@
 import { useContext, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // MUI Components
 import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from "@mui/material/Box";
+import Toolbar from '@mui/material/Toolbar';
 import Stack from "@mui/material/Stack";
 import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
 
 // App Specific
 import { AppContext } from '../context/AppStore';
@@ -19,6 +22,7 @@ export default function Home({ header }) {
   const [, appDispatch] = useContext(AppContext);
   const smallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
   const mediumScreen = useMediaQuery(theme => theme.breakpoints.down('md'));
+  const rrNavigate = useNavigate();
 
   useEffect(() => {
     appDispatch({ type: 'ROUTE', payload: header });
@@ -51,7 +55,7 @@ export default function Home({ header }) {
         // border: 1,
       }}>
         <Box textAlign="center" >
-          <Typography variant='h6'>We at the Mediterranean Barber Shop take great care of our customers. Our barbers are professional with many years of experience. Any hairstyle you want, we'll do it.</Typography>
+          <Typography color="white" variant='h6'>We at the Mediterranean Barber Shop take great care of our customers. Our barbers are professional with many years of experience. Any hairstyle you want, we'll do it.</Typography>
           <Typography mt={2} variant='h6' color="red">?? What else can we place here about the barber shop ??</Typography>
         </Box>
         <Box
@@ -62,6 +66,14 @@ export default function Home({ header }) {
         />
       </Box>
       <Images />
+      <Box mt={3} display="flex" alignItems="center" flexDirection="column">
+        <Typography color="white" variant="h4">Check Out</Typography>
+        <Stack mt={2} spacing={1}>
+          <Button color="warning" onClick={e => rrNavigate('/pricing')}>Our Price List</Button>
+          <Button color="warning" onClick={e => rrNavigate('/contact')}>Our Contact Information</Button>
+        </Stack>
+      </Box>
+      <Toolbar />
     </>
   );
 }

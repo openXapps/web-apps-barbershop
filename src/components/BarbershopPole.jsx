@@ -37,7 +37,7 @@ export default function BarbershopPole({ isSmall = false }) {
   };
   const barber = {
     // width: '54px',
-    width: '75%',
+    width: '70%',
     // height: '172px',
     height: '60%',
     // backgroundSize: '27px 27px',
