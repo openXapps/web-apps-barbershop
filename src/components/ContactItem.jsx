@@ -1,16 +1,20 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
+// import GoogleIcon from '@mui/icons-material/Google';
 
-export default function ContactItem({ title, value, icon, url, isSmall }) {
+export default function ContactItem({ index, title, value, isSmall }) {
 
-  const fontSize = isSmall ? 'body' : 'h5';
+  const fontSize = isSmall ? 'body1' : 'h6';
 
   return (
-    <Box display="flex" color="white" justifyContent="space-between">
-      <Typography mr={3} variant={fontSize}>{title}</Typography>
-      <Typography variant={fontSize}>{value}</Typography>
-      {/* <IconButton>{icon}</IconButton> */}
-    </Box>
+    <>
+      {index > 0 && <Divider />}
+      <Box display="flex" color="white" justifyContent="space-between">
+        <Typography mr={2} variant={fontSize} >{title}</Typography>
+        <Typography variant={fontSize} textAlign="right">{value}</Typography>
+      </Box>
+    </>
   );
 }

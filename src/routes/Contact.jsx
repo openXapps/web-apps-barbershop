@@ -23,10 +23,9 @@ const businessHours = [
 ];
 
 const contactList = [
-  { title: 'WhatsApp', value: '+27 74 021 4302', icon: GoogleIcon, url: '' },
-  { title: 'WhatsApp', value: '+27 81 361 9742', icon: GoogleIcon, url: '' },
-  { title: 'Email', value: '???@gmail.com', icon: GoogleIcon, url: '' },
-  // { title: 'Google', value: 'Search', icon: GoogleIcon, url: 'https://www.google.com/search?q=mediterranean+barber+raslouw&oq=medit' },
+  { title: 'Cellphone', value: '+27 74 021 4302', },
+  { title: 'Cellphone', value: '+27 81 361 9742', },
+  { title: 'Email', value: '???@gmail.com', },
 ]
 
 export default function Contact({ header }) {
@@ -39,53 +38,53 @@ export default function Contact({ header }) {
   }, [appDispatch])
 
   return (
-    <Box
-      mt={smallScreen ? 2 : 3}
-      display="flex"
-      alignItems="center"
-      flexDirection="column"
-    >
+    <Box mt={smallScreen ? 2 : 3}>
       <Typography
-        color="error"
-        variant={smallScreen ? 'h5' : 'h4'}
+        // color="error"
+        variant={smallScreen ? 'h6' : 'h5'}
         textAlign="center"
         fontWeight={700}
       >Business Hours</Typography>
       <Box sx={{ mt: 2, p: 2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 5 }}>
         {businessHours.map((v, i) => {
           return (
-            <Hoursitem key={i} day={v.day} hours={v.hours} isSmall={smallScreen} />
+            <Hoursitem key={i} index={i} day={v.day} hours={v.hours} isSmall={smallScreen} />
           );
         })}
       </Box>
       <Typography
         mt={2}
-        color="error"
-        variant={smallScreen ? 'h5' : 'h4'}
+        variant={smallScreen ? 'h6' : 'h5'}
         textAlign="center"
         fontWeight={700}
       >Contact Details</Typography>
       <Box sx={{ mt: 2, p: 2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 5 }}>
         {contactList.map((v, i) => {
           return (
-            <ContactItem key={i} title={v.title} value={v.value} icon={v.icon} url={v.url} isSmall={smallScreen} />
+            <ContactItem key={i} index={i} title={v.title} value={v.value} icon={v.icon} url={v.url} isSmall={smallScreen} />
           );
         })}
+        <Box mt={2} textAlign="center" color="white">
+          <Typography variant={smallScreen ? 'body1' : 'h6'}>Raslouw Lifestyle Centre</Typography>
+          <Typography variant={smallScreen ? 'body1' : 'h6'}>Corner Hendrik Verwoerd Dr & Rooihuiskraal Rd</Typography>
+          <Typography variant={smallScreen ? 'body1' : 'h6'}>Raslouw, Centurion</Typography>
+        </Box>
       </Box>
       <Typography
         my={2}
-        color="error"
-        variant={smallScreen ? 'h5' : 'h4'}
+        variant={smallScreen ? 'h6' : 'h5'}
         textAlign="center"
         fontWeight={700}
       >Google Map</Typography>
       <iframe
-        width="320"
-        height="400"
-        frameBorder="0"
-        scrolling="no"
-        marginHeight="0"
-        marginWidth="0"
+        style={{
+          width: "100%",
+          height: "360px",
+          frameBorder: "0",
+          scrolling: "no",
+          marginHeight: "0",
+          marginWidth: "0",
+        }}
         id="gmap_canvas"
         src="https://maps.google.com/maps?width=320&amp;height=400&amp;hl=en&amp;q=Raslouw%20Lifestyle%20Centre%20Centurion+(Mediterranian%20Barber)&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
       </iframe>

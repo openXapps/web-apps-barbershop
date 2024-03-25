@@ -40,29 +40,27 @@ export default function Pricing({ header }) {
   return (
     <Box mt={smallScreen ? 2 : 3}>
       <Typography
-        color="error"
-        variant={smallScreen ? 'h5' : 'h4'}
+        variant={smallScreen ? 'h6' : 'h5'}
         textAlign="center"
         fontWeight={700}
-      >HAIRCUT, SHAVE, WAX & THREADING</Typography>
+      >Haircut, Shave, Wax & Threading</Typography>
       <Box sx={{ mt: 2, p: 2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 5 }}>
         {priceList.map((v, i) => {
           return (
-            <PriceItem key={i} title={v.title} price={v.price} isSmall={smallScreen} />
+            <PriceItem key={i} index= {i} title={v.title} price={v.price} isSmall={smallScreen} />
           );
         })}
       </Box>
       <Typography
         mt={smallScreen ? 2 : 3}
-        color="error"
-        variant={smallScreen ? 'h5' : 'h4'}
+        variant={smallScreen ? 'h6' : 'h5'}
         textAlign="center"
         fontWeight={700}
       >SPECIAL</Typography>
       <Box sx={{ mt: 2, p: 2, backgroundColor: 'rgba(0,0,0,0.2)', borderRadius: 5 }}>
         {priceSpacials.map((v, i) => {
           return (
-            <PriceItem key={i} title={v.title} price={v.price} isSmall={smallScreen} />
+            <PriceItem key={i} index={i} title={v.title} price={v.price} isSmall={smallScreen} />
           );
         })}
       </Box>

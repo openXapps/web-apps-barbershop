@@ -1,14 +1,18 @@
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
 
-export default function PriceItem({ title, price, isSmall }) {
+export default function PriceItem({ index, title, price, isSmall }) {
 
-  const fontSize = isSmall ? 'body' : 'h5';
+  const fontSize = isSmall ? 'body1' : 'h6';
 
   return (
-    <Box display="flex">
-      <Typography variant={fontSize} flexGrow={1} color="white">{title}</Typography>
-      <Typography variant={fontSize} justifyContent="right" color="white">R {price}</Typography>
-    </Box>
+    <>
+      {index > 0 && <Divider />}
+      <Box display="flex" color="white">
+        <Typography variant={fontSize} flexGrow={1}>{title}</Typography>
+        <Typography variant={fontSize} textAlign="right">R {price}</Typography>
+      </Box>
+    </>
   );
 }

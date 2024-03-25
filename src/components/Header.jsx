@@ -53,7 +53,7 @@ function Header() {
     <AppBar color="inherit">
       <Container maxWidth="md">
         <Toolbar disableGutters variant={smallScreen ? 'dense' : 'regular'}>
-          <Typography variant="h6" sx={{ flexGrow: 1 }}>
+          <Typography variant="h5" sx={{ flexGrow: 1 }}>
             {routePath}
           </Typography>
           {pathname === '/' ? (
