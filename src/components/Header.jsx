@@ -14,16 +14,13 @@ import Divider from '@mui/material/Divider';
 // MUI Icons
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import Brightness6Icon from '@mui/icons-material/Brightness6';
-// import ContentCutIcon from '@mui/icons-material/ContentCut';
 import MonetizationOnIcon from '@mui/icons-material/MonetizationOn';
 import LocationOnIcon from '@mui/icons-material/LocationOn';
-// import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
-// import AddCircleIcon from '@mui/icons-material/AddCircle';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import SettingsIcon from '@mui/icons-material/Settings';
 
 // App Specific
 import { AppContext } from '../context/AppStore';
+import { storageItems } from '../config/defaults';
+import { getSettings, saveLocalStorage } from '../helpers/localstorage';
 
 function Header() {
   const rrNavigate = useNavigate();
@@ -46,7 +43,8 @@ function Header() {
   // };
 
   const handleThemeClick = () => {
-    appDispatch({ type: 'THEME', payload: !themeIsDark }) 
+    saveLocalStorage(storageItems.settings, { ...getSettings().data, themeIsDark: !themeIsDark });
+    appDispatch({ type: 'THEME', payload: !themeIsDark });
   }
 
   return (
@@ -70,7 +68,7 @@ function Header() {
                 color="inherit"
                 onClick={() => { rrNavigate('/contact') }}
               ><LocationOnIcon /></IconButton>
-              <Divider sx={{opacity: 0.9}} orientation="vertical" variant="middle" flexItem />
+              <Divider sx={{ opacity: 0.9 }} orientation="vertical" variant="middle" flexItem />
               <IconButton
                 color="inherit"
                 onClick={handleThemeClick}

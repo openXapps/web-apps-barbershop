@@ -13,10 +13,10 @@ export default defineConfig({
       },
       includeAssets: ['favicon.ico', 'apple-touch-icon.png', 'mask-icon.svg'],
       manifest: {
-        name: 'Mediterranean Barbershop',
+        name: 'Mediterranean Barber',
         short_name: 'Barbershop',
-        description: 'Mediterranean Barbershop',
-        theme_color: '#ffffff',
+        description: 'Mediterranean Barber',
+        theme_color: '#0088E0',
         start_url: '.',
         icons: [
           {

@@ -12,11 +12,10 @@ import Button from "@mui/material/Button";
 // App Specific
 import { AppContext } from '../context/AppStore';
 import BarbershopPole from '../components/BarbershopPole';
-import logo from '../assets/barbershop-logo.svg';
 import Images from '../components/Images';
-// import HeadImage from '../components/HeadImage';
-// import svgHead02 from '../assets/barbershop-head-02.svg';
-// import svgHead03 from '../assets/barbershop-head-03.svg';
+import logo from '../assets/barbershop-logo.svg';
+import svgHead01 from '../assets/barbershop-head-01-90x119.png';
+import svgHead03 from '../assets/barbershop-head-03-90x119.png';
 
 
 export default function Home({ header }) {
@@ -32,9 +31,9 @@ export default function Home({ header }) {
 
   return (
     <>
-      <Box mt={2} border={0} display="flex" justifyItems="space-between">
+      <Box mt={2} border={0} display="flex" alignItems="center">
         <BarbershopPole isSmall={smallScreen ? true : false} />
-        <Stack mt={smallScreen ? 2 : 0} direction="column" alignItems="center" spacing={2} flexGrow={1}>
+        <Stack direction="column" alignItems="center" spacing={2} flexGrow={1}>
           <Typography
             variant={smallScreen ? 'h5' : (mediumScreen ? 'h4' : 'h3')}
             sx={{ fontWeight: 700 }}
@@ -48,9 +47,15 @@ export default function Home({ header }) {
         </Stack>
         <BarbershopPole isSmall={smallScreen ? true : false} />
       </Box>
-      <Box textAlign="center" >
-        <Typography mt={4} color="white" variant={smallScreen ? 'body1' : 'h6'}>We at the Mediterranean Barber Shop take great care of our customers. Our barbers are professional with many years of experience. Any hairstyle you want, we'll do it.</Typography>
-        <Typography mt={2} color="white" variant={smallScreen ? 'body1' : 'h6'}>Depending how you want your haircut or beard trim to look like, just tell us or show a picture of your favourite style and we'll cut and trim just the way you want it.</Typography>
+      {/* <Typography mt={2} color="white" variant={smallScreen ? 'body1' : 'h6'}>We at the Mediterranean Barber Shop take great care of our customers. Our barbers are professional with many years of experience. Any hairstyle you want, we'll do it.</Typography>
+        <Typography mt={2} color="white" variant={smallScreen ? 'body1' : 'h6'}>Depending how you want your haircut or beard trim to look like, just tell us or show a picture of your favourite style and we'll cut and trim just the way you want it.</Typography> */}
+      <Box mt={3} display="flex" justifyContent="space-around" alignItems="center" gap={1}>
+        <Box component="img" src={svgHead03} />
+        <Box>
+          <Typography color="white" variant={smallScreen ? 'body1' : 'h6'} textAlign="center">Elevate Your Look</Typography>
+          <Typography color="white" variant={smallScreen ? 'body1' : 'h6'} textAlign="center">Elevate Your Life</Typography>
+        </Box>
+        <Box component="img" src={svgHead01} />
       </Box>
       <Images />
       <Box mt={3} display="flex" alignItems="center" flexDirection="column">

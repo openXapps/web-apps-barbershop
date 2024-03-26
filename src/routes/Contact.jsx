@@ -5,7 +5,7 @@ import useMediaQuery from '@mui/material/useMediaQuery';
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import GoogleIcon from '@mui/icons-material/Google';
+import Divider from '@mui/material/Divider';
 
 import { AppContext } from '../context/AppStore';
 import Hoursitem from '../components/HoursItem';
@@ -25,7 +25,7 @@ const businessHours = [
 const contactList = [
   { title: 'Cellphone', value: '+27 74 021 4302', },
   { title: 'Cellphone', value: '+27 81 361 9742', },
-  { title: 'Email', value: '???@gmail.com', },
+  { title: 'Email', value: 'chabanesekour@gmail.com', },
 ]
 
 export default function Contact({ header }) {
@@ -65,8 +65,10 @@ export default function Contact({ header }) {
           );
         })}
         <Box mt={2} textAlign="center" color="white">
-          <Typography variant={smallScreen ? 'body1' : 'h6'}>Raslouw Lifestyle Centre</Typography>
-          <Typography variant={smallScreen ? 'body1' : 'h6'}>Corner Hendrik Verwoerd Dr & Rooihuiskraal Rd</Typography>
+        <Divider />
+          <Typography mt={2} variant={smallScreen ? 'body1' : 'h6'}>Raslouw Lifestyle Centre</Typography>
+          <Typography variant={smallScreen ? 'body1' : 'h6'}>Corner of Hendrik Verwoerd Dr</Typography>
+          <Typography variant={smallScreen ? 'body1' : 'h6'}>& Rooihuiskraal Rd</Typography>
           <Typography variant={smallScreen ? 'body1' : 'h6'}>Raslouw, Centurion</Typography>
         </Box>
       </Box>
