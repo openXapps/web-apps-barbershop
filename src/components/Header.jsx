@@ -27,20 +27,6 @@ function Header() {
   const { pathname } = useLocation();
   const smallScreen = useMediaQuery(theme => theme.breakpoints.down('sm'));
   const [{ themeIsDark, routePath }, appDispatch] = useContext(AppContext);
-  // const [anchorEl, setAnchorEl] = useState(null);
-
-  // const handleMenuToggle = (e) => {
-  //   setAnchorEl(e.currentTarget);
-  // };
-
-  // const handleMenuClose = () => {
-  //   setAnchorEl(null);
-  // };
-
-  // const handleMenuRoutes = (e) => {
-  //   handleMenuClose();
-  //   rrNavigate(`/${e.currentTarget.dataset.name}`);
-  // };
 
   const handleThemeClick = () => {
     saveLocalStorage(storageItems.settings, { ...getSettings().data, themeIsDark: !themeIsDark });
@@ -56,10 +42,6 @@ function Header() {
           </Typography>
           {pathname === '/' ? (
             <Box display="flex" flexDirection="row">
-              {/* <IconButton
-                color="inherit"
-                onClick={() => { rrNavigate('/styles') }}
-              ><ContentCutIcon /></IconButton> */}
               <IconButton
                 color="inherit"
                 onClick={() => { rrNavigate('/pricing') }}
