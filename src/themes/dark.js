@@ -3,7 +3,6 @@ const dark = {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          // background: 'linear-gradient(145deg, #82838A, #15151C) no-repeat fixed', // Deep Space
           background: 'linear-gradient(145deg, #013856, #b73535) no-repeat fixed', // Barbershop
         },
       },
@@ -11,16 +10,12 @@ const dark = {
   },
   palette: {
     mode: 'dark',
-    // primary: {
-    //   main: '#738bbf',
-    // },
-    // secondary: {
-    //   main: '#fb8c00',
-    // },
-    // background: {
-    //   default: '#303030',
-    //   paper: '#424242',
-    // },
+    button: {
+      main: '#f2f2f2',
+      light: '#ffffff',
+      dark: '#cccccc',
+      contrastText: '#999999',
+    }
   },
 };
 

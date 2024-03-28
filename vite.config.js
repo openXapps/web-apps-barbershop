@@ -16,7 +16,8 @@ export default defineConfig({
         name: 'Mediterranean Barber',
         short_name: 'Barbershop',
         description: 'Mediterranean Barber',
-        theme_color: '#0088E0',
+        theme_color: '#ffffff',
+        background_color: '#0088E0',
         start_url: '.',
         icons: [
           {

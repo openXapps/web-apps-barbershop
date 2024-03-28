@@ -3,7 +3,6 @@ const light = {
     MuiCssBaseline: {
       styleOverrides: {
         body: {
-          // background: 'linear-gradient(145deg, #FFF5CC, #414427) no-repeat fixed',
           background: 'linear-gradient(145deg, rgba(239,239,247,1) 0%, rgba(171,171,191,1) 35%, rgba(20,20,23,1) 100%) no-repeat fixed',
         },
       },
@@ -11,14 +10,11 @@ const light = {
   },
   palette: {
     mode: 'light',
-    primary: {
-      main: '#3f51b5',
-    },
-    secondary: {
-      main: '#f50057',
-    },
-    background: {
-      paper: '#ECEFF1',
+    button: {
+      main: '#f2f2f2',
+      light: '#ffffff',
+      dark: '#cccccc',
+      contrastText: '#999999',
     },
   },
 };

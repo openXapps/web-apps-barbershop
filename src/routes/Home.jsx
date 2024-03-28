@@ -47,8 +47,6 @@ export default function Home({ header }) {
         </Stack>
         <BarbershopPole isSmall={smallScreen ? true : false} />
       </Box>
-      {/* <Typography mt={2} color="white" variant={smallScreen ? 'body1' : 'h6'}>We at the Mediterranean Barber Shop take great care of our customers. Our barbers are professional with many years of experience. Any hairstyle you want, we'll do it.</Typography>
-        <Typography mt={2} color="white" variant={smallScreen ? 'body1' : 'h6'}>Depending how you want your haircut or beard trim to look like, just tell us or show a picture of your favourite style and we'll cut and trim just the way you want it.</Typography> */}
       <Box mt={3} display="flex" justifyContent="space-around" alignItems="center" gap={1}>
         <Box component="img" src={svgHead03} />
         <Box>
@@ -59,10 +57,10 @@ export default function Home({ header }) {
       </Box>
       <Images />
       <Box mt={3} display="flex" alignItems="center" flexDirection="column">
-        <Typography color="white" variant="h5" fontWeight={700}>Check Out Our</Typography>
+        <Typography color="white" variant="h6" fontWeight={700}>Check Out Our</Typography>
         <Stack mt={2} spacing={1}>
-          <Button color="warning" onClick={e => rrNavigate('/pricing')}>Price List</Button>
-          <Button color="warning" onClick={e => rrNavigate('/contact')}>Contact Information</Button>
+          <Button color="button" onClick={e => rrNavigate('/pricing')}>Price List</Button>
+          <Button color="button" onClick={e => rrNavigate('/contact')}>Contact Information</Button>
         </Stack>
       </Box>
       <Toolbar />
